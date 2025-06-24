@@ -11,27 +11,33 @@
       font-family: 'Open Sans', sans-serif;
       background-color: #ffffff;
       color: #111111;
+      display: flex;
+      min-height: 100vh;
     }
-    header {
+    aside {
+      width: 250px;
       background-color: #ffffff;
-      padding: 2rem 1rem 1rem;
-      text-align: center;
-      border-bottom: 1px solid #e6e6e6;
+      border-right: 1px solid #eee;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin: 0;
+    aside img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 2rem;
     }
     nav {
-      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
     nav a {
       text-decoration: none;
       color: #111;
-      margin: 0 1rem;
+      margin: 0.5rem 0;
       font-weight: 400;
       font-size: 0.9rem;
       letter-spacing: 1px;
@@ -41,10 +47,10 @@
       text-decoration: underline;
     }
     main {
+      flex-grow: 1;
+      padding: 2rem;
       max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      text-align: center;
+      margin: 0 auto;
     }
     h1 {
       font-family: 'Playfair Display', serif;
@@ -69,26 +75,45 @@
       border-top: 1px solid #eee;
       margin-top: 4rem;
     }
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+      nav {
+        flex-direction: row;
+        gap: 1rem;
+      }
+      nav a {
+        margin: 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="/Logo2016cropblk.png" alt="Through Autumn's Lens logo" style="max-width: 300px; height: auto; margin: 0 auto; display: block;" />
-
+  <aside>
+    <img src="/Logo2016cropblk.png" alt="Through Autumn's Lens logo" />
     <nav>
       <a href="/">Home</a>
       <a href="https://autumnfuentes.myportfolio.com" target="_blank">Portfolio</a>
       <a href="https://autumnfuentes.myportfolio.com/about" target="_blank">About</a>
       <a href="https://www.honeybook.com/widget/autumnfuentes/schedule" target="_blank">Schedule</a>
     </nav>
-  </header>
+  </aside>
   <main>
     <h1>Event Gallery</h1>
     <p>Browse the event gallery below. You can reference images by their file names.</p>
     <iframe src="/shootproof-widget.html"></iframe>
+    <footer>
+      &copy; Through Autumn's Lens · All rights reserved
+    </footer>
   </main>
-  <footer>
-    &copy; Through Autumn's Lens · All rights reserved
-  </footer>
 </body>
 </html>
