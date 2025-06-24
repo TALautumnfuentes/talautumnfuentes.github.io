@@ -12,7 +12,21 @@
       background-color: #ffffff;
       color: #111111;
       display: flex;
+      flex-direction: column;
       min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    header img {
+      max-width: 250px;
+      height: auto;
+    }
+    .container {
+      display: flex;
+      flex-grow: 1;
     }
     aside {
       width: 250px;
@@ -22,11 +36,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-    aside img {
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      height: fit-content;
+      align-self: flex-start;
+      z-index: 100;
     }
     nav {
       display: flex;
@@ -76,7 +90,7 @@
       margin-top: 4rem;
     }
     @media (max-width: 768px) {
-      body {
+      .container {
         flex-direction: column;
       }
       aside {
@@ -84,8 +98,12 @@
         border-right: none;
         border-bottom: 1px solid #eee;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #fff;
       }
       nav {
         flex-direction: row;
@@ -98,22 +116,26 @@
   </style>
 </head>
 <body>
-  <aside>
-    <img src="https://private-user-images.githubusercontent.com/216753699/458512409-85beb3d2-d65a-471f-813b-28dc4849a8d1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTA3ODgwNDAsIm5iZiI6MTc1MDc4Nzc0MCwicGF0aCI6Ii8yMTY3NTM2OTkvNDU4NTEyNDA5LTg1YmViM2QyLWQ2NWEtNDcxZi04MTNiLTI4ZGM0ODQ5YThkMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNjI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDYyNFQxNzU1NDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00Y2I2YTUwOWVmZGNhZWRlMTk5MjE2YmM5ODZjODBlZDQ5YmE5NTFiMWMyZDBkYWZmODFhNGZiZDIyZTlkZDIxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.27GIoIKTytkT8-Pcjpbq092LSdCQ4rdYEkVZSapIL-Y" alt="Through Autumn's Lens logo" />
-    <nav>
-      <a href="/">Home</a>
-      <a href="https://autumnfuentes.myportfolio.com" target="_blank">Portfolio</a>
-      <a href="https://autumnfuentes.myportfolio.com/about" target="_blank">About</a>
-      <a href="https://www.honeybook.com/widget/autumnfuentes/schedule" target="_blank">Schedule</a>
-    </nav>
-  </aside>
-  <main>
-    <h1>Event Gallery</h1>
-    <p>Browse the event gallery below. You can reference images by their file names.</p>
-    <iframe src="/shootproof-widget.html"></iframe>
-    <footer>
-      &copy; Through Autumn's Lens · All rights reserved
-    </footer>
-  </main>
+  <header>
+    <img src="https://user-images.githubusercontent.com/.../Logo2016cropblk.png" alt="Through Autumn's Lens logo" />
+  </header>
+  <div class="container">
+    <aside>
+      <nav>
+        <a href="/">Home</a>
+        <a href="https://autumnfuentes.myportfolio.com" target="_blank">Portfolio</a>
+        <a href="https://autumnfuentes.myportfolio.com/about" target="_blank">About</a>
+        <a href="https://www.honeybook.com/widget/autumnfuentes/schedule" target="_blank">Schedule</a>
+      </nav>
+    </aside>
+    <main>
+      <h1>Event Gallery</h1>
+      <p>Browse the event gallery below. You can reference images by their file names.</p>
+      <iframe src="/shootproof-widget.html"></iframe>
+      <footer>
+        &copy; Through Autumn's Lens · All rights reserved
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
