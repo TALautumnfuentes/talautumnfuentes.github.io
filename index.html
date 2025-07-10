@@ -140,41 +140,13 @@
     </aside>
     <main>
 
-      <h2>Client Galleries</h2>
-<div id="shootproof-widget"></div>
-
-<iframe id="gallery-frame" src="" style="display: none;"></iframe>
-      <script>
-  const widgetContainer = document.getElementById('shootproof-widget');
-  const iframe = document.getElementById('gallery-frame');
-
-  // Inject the dropdown widget
-  const _cb = parseInt(Math.random() * 99999999);
-  const widgetScript = document.createElement('script');
-  widgetScript.src = 'https://throughautumnslens.shootproof.com/remote/chooser?events=1&email=0&language=en_US&cb=' + _cb;
-  widgetScript.type = 'text/javascript';
-  widgetScript.onload = () => {
-    // Wait a moment for widget to render
-    setTimeout(() => {
-      // Intercept links inside widget once it's fully loaded
-      const links = widgetContainer.querySelectorAll('a');
-      links.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetUrl = this.href;
-
-          iframe.style.display = 'block';
-          iframe.src = targetUrl;
-
-          // Optional: Scroll to iframe
-          iframe.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-    }, 1000); // Adjust delay if needed
-  };
-
-  widgetContainer.appendChild(widgetScript);
-</script>
+      <h2>Galleries</h2>
+<iframe 
+  src="https://throughautumnslens.shootproof.com" 
+  width="100%" 
+  height="1000" 
+  style="border: none;">
+</iframe>
 
 
 
